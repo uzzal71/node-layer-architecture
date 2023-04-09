@@ -23,7 +23,7 @@ const HOST = process.env.ELASTICSEARCH_HOST || 'localhost';
 const elasticsearchOptions = {
     level: 'info',
     clientOpts: { node: `http://${HOST}:9200` },
-    indexPrefix: 'log-parcelkoi',
+    indexPrefix: 'log',
 };
 
 const esTransport = new ElasticsearchTransport(elasticsearchOptions);

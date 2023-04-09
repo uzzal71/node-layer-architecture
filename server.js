@@ -3,6 +3,7 @@ import config from './config';
 import connect from './db';
 import { infoLogger } from './logger';
 import { handleError, handleRequest } from './middlewares/index';
+import routeConfiguration from './routes';
 
 const PORT = config.APP_PORT || 3000;
 
@@ -13,8 +14,14 @@ if (config.APP_ENV !== 'development') {
 }
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.status(200).json({
+        status: 200,
+        message: `Server running on port ${PORT}`,
+        apiUrl: `${config.APP_URL}/api/v1`,
+    });
 });
+
+routeConfiguration(app);
 
 app.use(handleError);
 

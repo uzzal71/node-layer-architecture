@@ -1,5 +1,6 @@
-export const registerTemplate = (data) => {
-    return `<!DOCTYPE html>
+import config from '../../config';
+
+const registerTemplate = (data) => `<!DOCTYPE html>
     <html>
       <head>
         <title>Registration Confirmation</title>
@@ -13,11 +14,12 @@ export const registerTemplate = (data) => {
             <h2 style="font-size: 24px; color: #333;">Thank you for registering!</h2>
             <p style="font-size: 16px; color: #333;">Dear ${data.name},</p>
             <p style="font-size: 16px; color: #333;">Thank you for registering on our website. To complete your registration, please click on the link below to confirm your email address:</p>
-            <p style="font-size: 16px; color: #333;"><a href="${data.link}" style="background-color: #008CBA; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Confirm Email Address</a></p>
+            <p style="font-size: 16px; color: #333;"><a href="${config.APP_URL}" style="background-color: #008CBA; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Confirm Email Address</a></p>
             <p style="font-size: 16px; color: #333;">If you did not register on our website, please disregard this email.</p>
             <p style="font-size: 16px; color: #333;">Thank you!</p>
           </div>
         </div>
       </body>
     </html>`;
-};
+
+export default registerTemplate;

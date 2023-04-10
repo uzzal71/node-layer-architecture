@@ -1,17 +1,12 @@
 import app from './app';
 import connect from './db';
-import { infoLogger } from './logger';
-import routeConfiguration from './routes';
+import routeConfiguration from './src/routes';
 import config from './src/config';
 import { handleError, handleRequest } from './src/middlewares/index';
 
 const PORT = config.APP_PORT || 3000;
 
 app.use(handleRequest);
-
-if (config.APP_ENV !== 'development') {
-    app.use(infoLogger());
-}
 
 app.get('/', (req, res) => {
     res.status(200).json({

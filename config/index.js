@@ -9,6 +9,12 @@ config.APP_URL = process.env.APP_URL;
 config.DB_URL = process.env.DB_URL;
 config.UPLOAD_PATH = process.env.UPLOAD_PATH;
 
+config.DB_HOST = process.env.DB_HOST;
+config.DB_PORT = process.env.DB_PORT;
+config.DB_DATABASE = process.env.DB_DATABASE;
+config.DB_USERNAME = process.env.DB_USERNAME;
+config.DB_PASSWORD = process.env.DB_PASSWORD;
+
 config.MAIL_MAILER = process.env.MAIL_MAILER;
 config.MAIL_HOST = process.env.MAIL_HOST;
 config.MAIL_PORT = process.env.MAIL_PORT;

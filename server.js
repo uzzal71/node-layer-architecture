@@ -1,9 +1,9 @@
 import app from './app';
-import config from './config';
 import connect from './db';
 import { infoLogger } from './logger';
-import { handleError, handleRequest } from './middlewares/index';
 import routeConfiguration from './routes';
+import config from './src/config';
+import { handleError, handleRequest } from './src/middlewares/index';
 
 const PORT = config.APP_PORT || 3000;
 

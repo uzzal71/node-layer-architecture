@@ -3,4 +3,9 @@ export const apiSuccess = (response) => ({
     payload: response,
 });
 
+export const apiFailed = (response) => ({
+    type: 'API_FAILED',
+    payload: response,
+});
+
 export default {};

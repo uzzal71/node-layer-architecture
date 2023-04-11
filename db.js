@@ -1,16 +1,11 @@
-import mongoose from 'mongoose';
-import config from './src/config';
-
-const options = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-};
+import sequelize from './src/config/sequelize';
 
 const connect = async () => {
     try {
-        await mongoose.connect(config.DB_URL, options);
+        await sequelize.authenticate();
+        console.log('Connection has been established successfully.');
     } catch (error) {
-        throw new Error(error.message);
+        console.error('Unable to connect to the database:', error);
     }
 };
 

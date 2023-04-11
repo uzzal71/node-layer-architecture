@@ -14,6 +14,7 @@ config.DB_PORT = process.env.DB_PORT;
 config.DB_DATABASE = process.env.DB_DATABASE;
 config.DB_USERNAME = process.env.DB_USERNAME;
 config.DB_PASSWORD = process.env.DB_PASSWORD;
+config.DB_DIALECT = process.env.DB_DIALECT;
 
 config.MAIL_MAILER = process.env.MAIL_MAILER;
 config.MAIL_HOST = process.env.MAIL_HOST;

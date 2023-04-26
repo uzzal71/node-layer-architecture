@@ -3,8 +3,7 @@ import connect from './db';
 import routeConfiguration from './src/routes';
 import config from './src/config';
 import { handleError, handleRequest } from './src/middlewares/index';
-// import Category from './src/models/data-models/Category';
-// import sequelize from './src/config/sequelize';
+import sequelize from './src/config/sequelize';
 
 const PORT = config.APP_PORT || 3000;
 
@@ -22,15 +21,13 @@ routeConfiguration(app);
 
 app.use(handleError);
 
-// Category.sync();
-
 connect()
     .then(() => {
         app.listen(PORT, () => {
             connect();
             console.log('Database connected');
             console.log(`Server running on port ${PORT}`);
-            // sequelize.sync();
+            sequelize.sync();
         });
     })
     .catch((err) => {
